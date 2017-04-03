@@ -23,3 +23,12 @@ Now for the test:
 * In the [The Swagger UI](http://localhost:3010/swagger/?url=http://localhost:3010/api/swagger.json) fire 20 request. Meanwhile, refresh the tab with the call to `api/hello` a couple of times and notice how it becomes less responsive. On my machine it sometimes takes a couple of seconds before a request comes back. This is different from my expectation:
 
 ![Hello Yada](yada-hello.png)
+
+## Solution
+
+    ab -n 20 -c 20 -v 10 -H 'Accept: application/json' 'http://localhost:3010/api/async'
+    ab -n 20 -c 20 -v 999 -H 'Accept: text/plain' 'http://localhost:3010/api/hello'
+    
+The problem was that there is a maximum number of requests to the same
+domain in browsers. Thanks to [thegeez](https://github.com/thegeez)
+for pointing me to the solution.
