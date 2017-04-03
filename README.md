@@ -3,7 +3,7 @@ Testing an async endpoint with Yada
 
 ## What I expect from an async endpoint:
 
-* Other endpoints keep as responsive no matter how many request to async endpoints are being processed.
+* Other endpoints remain responsive no matter how many request to async endpoints are being processed.
 
 ## How to reproduce?
 
