@@ -29,7 +29,7 @@ Now for the test:
     ab -n 20 -c 20 -v 10 -H 'Accept: application/json' 'http://localhost:3010/api/async'
     ab -n 20 -c 20 -v 999 -H 'Accept: text/plain' 'http://localhost:3010/api/hello'
     
-The problem was that there is a maximum number of requests to the same
+The problem was that there is a maximum number of concurrent requests to the same
 domain in browsers. Use a different tool like Apache Bench. Thanks
 to [thegeez](https://github.com/thegeez) for pointing me to the
 solution.
